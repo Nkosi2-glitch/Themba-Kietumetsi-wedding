@@ -1,0 +1,1250 @@
+/* =========================================================
+   THEMBA & KEITUMETSI WEDDING WEBSITE
+   MAIN STYLESHEET
+   ========================================================= */
+
+/* -----------------------------
+   COLOURS
+----------------------------- */
+
+:root {
+    --gold: #b08d57;
+    --dark-gold: #8d6d3d;
+
+    --black: #090909;
+    --soft-black: #171717;
+
+    --white: #ffffff;
+
+    --cream: #f5efe4;
+    --light-cream: #faf6ee;
+    --beige: #d8c7ae;
+
+    --brown: #5c4838;
+    --text: #24201c;
+    --muted: #625c55;
+}
+
+
+/* -----------------------------
+   RESET
+----------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3 {
+    font-family: "Cormorant Garamond", serif;
+    font-weight: 500;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================================
+   GENERAL TYPOGRAPHY
+   ========================================================= */
+
+.section-label {
+    font-size: 0.7rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.small-gold-line,
+.gold-line {
+    height: 1px;
+    background: var(--gold);
+    margin: 1.8rem auto;
+}
+
+.small-gold-line {
+    width: 55px;
+}
+
+.gold-line {
+    width: 90px;
+}
+
+
+/* =========================================================
+   HERO / FIRST SLIDE
+   ========================================================= */
+
+.hero {
+    min-height: 100svh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+
+    text-align: center;
+    color: var(--white);
+
+    background:
+        url("couple-hero.jpeg")
+        center center / cover
+        no-repeat;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.75) 0%,
+            rgba(0, 0, 0, 0.30) 45%,
+            rgba(0, 0, 0, 0.85) 100%
+        );
+}
+
+.hero-frame {
+    position: absolute;
+    inset: 20px;
+
+    border: 1px solid rgba(176, 141, 87, 0.65);
+
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 900px;
+
+    animation: fadeUp 1.5s ease both;
+}
+
+.hero-intro {
+    text-transform: uppercase;
+
+    letter-spacing: 4px;
+
+    font-size: 0.7rem;
+}
+
+.hero h1 {
+    font-size: clamp(4rem, 10vw, 8rem);
+
+    line-height: 0.9;
+
+    margin: 2rem 0;
+}
+
+.hero h1 span {
+    display: block;
+}
+
+.hero .ampersand {
+    color: var(--gold);
+
+    font-size: 0.55em;
+
+    margin: 0.3rem 0;
+}
+
+.hero-subtitle {
+    max-width: 520px;
+
+    margin: 2rem auto 3rem;
+
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+}
+
+.hero-button,
+.directions-button,
+.whatsapp-button {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 0.7rem;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    font-size: 0.68rem;
+
+    letter-spacing: 1.8px;
+
+    padding: 1rem 1.8rem;
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+
+.hero-button {
+    color: var(--white);
+
+    border: 1px solid var(--gold);
+}
+
+.hero-button:hover {
+    background: var(--gold);
+
+    color: var(--black);
+
+    transform: translateY(-3px);
+}
+
+.scroll-indicator {
+    position: absolute;
+
+    z-index: 2;
+
+    bottom: 30px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 0.6rem;
+
+    font-size: 0.55rem;
+
+    letter-spacing: 2px;
+}
+
+.scroll-indicator i {
+    color: var(--gold);
+
+    animation: bounce 2s infinite;
+}
+
+
+/* =========================================================
+   COUNTDOWN / SECOND SLIDE
+   ========================================================= */
+
+.countdown-section {
+    padding: 7rem 2rem;
+
+    text-align: center;
+
+    background: var(--white);
+}
+
+.countdown-section h2 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+
+    line-height: 1;
+}
+
+.countdown-grid {
+    max-width: 900px;
+
+    margin: 3.5rem auto 1.5rem;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 1rem;
+}
+
+.countdown-item {
+    padding: 2rem 1rem;
+
+    border: 1px solid rgba(176, 141, 87, 0.45);
+
+    background: var(--light-cream);
+}
+
+.countdown-item span {
+    display: block;
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(3rem, 6vw, 5rem);
+
+    line-height: 1;
+
+    color: var(--gold);
+}
+
+.countdown-item p {
+    margin-top: 0.8rem;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    font-size: 0.65rem;
+}
+
+.countdown-date {
+    font-size: 0.75rem;
+
+    letter-spacing: 2px;
+
+    color: #777;
+}
+
+
+/* =========================================================
+   THIRD SLIDE — OUR STORY / PHOTOS
+   ========================================================= */
+
+.introduction {
+    padding: 7rem 2rem;
+
+    max-width: 1250px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    gap: 5rem;
+}
+
+.introduction-text {
+    text-align: left;
+}
+
+.introduction-text .small-gold-line {
+    margin: 1.8rem 0;
+}
+
+.introduction h2 {
+    font-size: clamp(3rem, 6vw, 5.5rem);
+
+    line-height: 0.95;
+}
+
+.introduction-text > p:last-child {
+    max-width: 520px;
+
+    color: var(--muted);
+}
+
+
+/* -----------------------------
+   MAIN COUPLE PHOTO
+----------------------------- */
+
+.couple-portrait-wrapper {
+    position: relative;
+
+    padding: 18px;
+}
+
+.portrait-border {
+    position: absolute;
+
+    inset: 0;
+
+    border: 1px solid var(--gold);
+
+    transform: rotate(2deg);
+
+    pointer-events: none;
+}
+
+.couple-portrait {
+    width: 100%;
+
+    display: block;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    filter:
+        contrast(1.02)
+        saturate(0.9);
+}
+
+
+/* -----------------------------
+   OPTIONAL PHOTO GALLERY
+   For the extra two pictures
+----------------------------- */
+
+.photo-gallery {
+    width: 100%;
+
+    margin-top: 3rem;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1rem;
+}
+
+.photo-gallery img {
+    width: 100%;
+
+    height: 320px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border: 1px solid rgba(176, 141, 87, 0.45);
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+.photo-gallery img:hover {
+    transform: scale(1.02);
+
+    filter: brightness(1.03);
+}
+
+
+/* =========================================================
+   CELEBRATION SECTIONS
+   ========================================================= */
+
+.celebration {
+    min-height: 100svh;
+
+    position: relative;
+
+    overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 7rem 2rem;
+
+    text-align: center;
+}
+
+.celebration-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    max-width: 850px;
+}
+
+.day-number {
+    position: absolute;
+
+    top: -5rem;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(7rem, 18vw, 13rem);
+
+    opacity: 0.06;
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   DAY ONE
+   LOBOLA CELEBRATION
+   ========================================================= */
+
+.day-one {
+    color: var(--white);
+
+    background:
+        radial-gradient(
+            circle at center,
+            #202020 0%,
+            #0a0a0a 65%
+        );
+}
+
+.traditional-pattern {
+    position: absolute;
+
+    width: 170px;
+
+    height: 100%;
+
+    opacity: 0.14;
+
+    background-image:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0,
+            transparent 18px,
+            var(--gold) 19px,
+            transparent 21px
+        );
+}
+
+.pattern-left {
+    left: 0;
+}
+
+.pattern-right {
+    right: 0;
+
+    transform: scaleX(-1);
+}
+
+.day-one .section-label {
+    color: #d8d8d8;
+}
+
+.day-one h2,
+.day-two h2 {
+    font-size: clamp(3.5rem, 8vw, 7rem);
+
+    line-height: 0.85;
+
+    letter-spacing: 2px;
+}
+
+.day-one .detail-item {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+.day-one .detail-item i,
+.day-one .detail-label {
+    color: var(--gold);
+}
+
+.day-one .bible-verse {
+    border-color: rgba(176, 141, 87, 0.45);
+}
+
+.day-one-button {
+    margin-top: 2.5rem;
+
+    color: var(--white);
+
+    border: 1px solid var(--gold);
+}
+
+.day-one-button:hover {
+    background: var(--gold);
+
+    color: var(--black);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   DAY TWO
+   LOBOLA CELEBRATION
+   ========================================================= */
+
+.day-two {
+    color: #3f3328;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #fffaf0 0%,
+            var(--cream) 48%,
+            var(--beige) 100%
+        );
+}
+
+.swati-decoration {
+    position: absolute;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 70px;
+
+    opacity: 0.45;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent 0 16px,
+            var(--gold) 17px 19px,
+            transparent 20px 36px
+        ),
+        repeating-linear-gradient(
+            -45deg,
+            transparent 0 16px,
+            rgba(92, 72, 56, 0.25) 17px 19px,
+            transparent 20px 36px
+        );
+}
+
+.swati-top {
+    top: 0;
+}
+
+.swati-bottom {
+    bottom: 0;
+}
+
+.day-two .section-label {
+    color: #6e5a45;
+}
+
+.day-two .detail-item {
+    border-color: rgba(99, 79, 57, 0.18);
+}
+
+.day-two .detail-item i,
+.day-two .detail-label {
+    color: var(--dark-gold);
+}
+
+.day-two .bible-verse {
+    border-color: rgba(176, 141, 87, 0.55);
+}
+
+.day-two-button {
+    margin-top: 2.5rem;
+
+    color: #3f3328;
+
+    border: 1px solid var(--dark-gold);
+}
+
+.day-two-button:hover {
+    background: var(--dark-gold);
+
+    color: var(--white);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   EVENT DATES
+   ========================================================= */
+
+.event-date {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 1rem;
+
+    margin: 3rem 0;
+
+    font-family: "Cormorant Garamond", serif;
+}
+
+.event-date span {
+    font-size: clamp(5rem, 10vw, 8rem);
+
+    line-height: 1;
+
+    color: var(--gold);
+}
+
+.event-date p {
+    text-align: left;
+
+    font-size: 1rem;
+
+    letter-spacing: 2px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   EVENT DETAILS
+   ========================================================= */
+
+.event-details {
+    max-width: 650px;
+
+    margin: 0 auto;
+}
+
+.detail-item {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 1.2rem;
+
+    padding: 1.5rem 0;
+
+    text-align: left;
+
+    border-bottom: 1px solid;
+}
+
+.detail-item i {
+    width: 25px;
+
+    margin-top: 0.25rem;
+
+    font-size: 1.1rem;
+}
+
+.detail-item div {
+    flex: 1;
+}
+
+.detail-label {
+    display: block;
+
+    margin-bottom: 0.4rem;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 3px;
+}
+
+.detail-item p {
+    font-size: 0.95rem;
+}
+
+
+/* =========================================================
+   BIBLE VERSES
+   ========================================================= */
+
+.bible-verse {
+    max-width: 700px;
+
+    margin: 5rem auto 0;
+
+    padding: 3rem 2rem;
+
+    border-top: 1px solid;
+
+    border-bottom: 1px solid;
+}
+
+.quote-icon {
+    color: var(--gold);
+
+    font-size: 1.4rem;
+
+    margin-bottom: 1.5rem;
+}
+
+.bible-verse p {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+
+    font-style: italic;
+
+    line-height: 1.45;
+}
+
+.bible-verse span {
+    display: block;
+
+    margin-top: 1.5rem;
+
+    color: var(--gold);
+
+    font-size: 0.7rem;
+
+    letter-spacing: 3px;
+}
+
+
+/* =========================================================
+   GIFTS
+   ========================================================= */
+
+.gifts-section {
+    padding: 7rem 2rem;
+
+    text-align: center;
+
+    background: var(--white);
+}
+
+.gifts-content {
+    max-width: 800px;
+
+    margin: 0 auto;
+}
+
+.gifts-section h2 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+}
+
+.gifts-message {
+    max-width: 600px;
+
+    margin: 1.2rem auto;
+
+    color: #5a5a5a;
+}
+
+.gift-options {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 1.5rem;
+
+    flex-wrap: wrap;
+
+    margin-top: 3rem;
+}
+
+.gift-option {
+    min-width: 220px;
+
+    padding: 2rem;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 1rem;
+
+    border: 1px solid rgba(176, 141, 87, 0.45);
+
+    background: var(--light-cream);
+
+    transition: transform 0.3s ease;
+}
+
+.gift-option:hover {
+    transform: translateY(-5px);
+}
+
+.gift-option i {
+    color: var(--gold);
+
+    font-size: 1.5rem;
+}
+
+.gift-option span {
+    font-family: "Cormorant Garamond", serif;
+
+    font-size: 1.6rem;
+}
+
+
+/* =========================================================
+   RSVP
+   ========================================================= */
+
+.rsvp-section {
+    padding: 7rem 2rem;
+
+    background:
+        linear-gradient(
+            135deg,
+            #090909,
+            #1d1d1d
+        );
+
+    color: var(--white);
+
+    text-align: center;
+}
+
+.rsvp-content {
+    max-width: 900px;
+
+    margin: 0 auto;
+}
+
+.rsvp-section .section-label {
+    color: #d8d8d8;
+}
+
+.rsvp-section h2 {
+    font-size: clamp(3rem, 7vw, 5.5rem);
+
+    line-height: 1;
+}
+
+.rsvp-intro {
+    max-width: 600px;
+
+    margin: 0 auto 3rem;
+
+    color: #d0d0d0;
+}
+
+.rsvp-contacts {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 1.5rem;
+}
+
+.contact-card {
+    padding: 3rem 2rem;
+
+    border: 1px solid rgba(176, 141, 87, 0.4);
+
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.whatsapp-large-icon {
+    font-size: 2rem;
+
+    color: var(--gold);
+
+    margin-bottom: 1.2rem;
+}
+
+.contact-card h3 {
+    font-size: 2rem;
+
+    margin-bottom: 0.5rem;
+}
+
+.contact-card p {
+    color: #cfcfcf;
+
+    margin-bottom: 2rem;
+}
+
+.whatsapp-button {
+    width: 100%;
+
+    color: var(--white);
+
+    border: 1px solid var(--gold);
+}
+
+.whatsapp-button:hover {
+    background: var(--gold);
+
+    color: var(--black);
+
+    transform: translateY(-3px);
+}
+
+
+/* =========================================================
+   CLOSING / LAST SLIDE
+   ========================================================= */
+
+.closing-section {
+    min-height: 100svh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 2rem;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f8f1e5,
+            #d8c7ae
+        );
+}
+
+.closing-section h2 {
+    font-size: clamp(4rem, 11vw, 9rem);
+
+    line-height: 0.9;
+
+    margin: 2rem 0;
+}
+
+.closing-section h2 span {
+    display: block;
+
+    margin: 0.3rem 0;
+
+    font-size: 0.55em;
+
+    color: var(--gold);
+}
+
+
+/* =========================================================
+   ANIMATIONS
+   ========================================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 850px) {
+
+    .introduction {
+        grid-template-columns: 1fr;
+
+        gap: 3rem;
+    }
+
+    .introduction-text {
+        text-align: center;
+    }
+
+    .introduction-text .small-gold-line {
+        margin: 1.8rem auto;
+    }
+
+    .introduction-text > p:last-child {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .couple-portrait-wrapper {
+        max-width: 600px;
+
+        width: 100%;
+
+        margin: 0 auto;
+    }
+
+    .countdown-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .rsvp-contacts {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-gallery {
+        max-width: 700px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .hero {
+        background-position: center center;
+    }
+
+    .hero-frame {
+        inset: 12px;
+    }
+
+    .hero h1 {
+        font-size: clamp(4rem, 18vw, 6rem);
+    }
+
+    .hero-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .traditional-pattern {
+        width: 60px;
+    }
+
+    .celebration {
+        padding: 6rem 1.4rem;
+    }
+
+    .introduction,
+    .countdown-section,
+    .gifts-section,
+    .rsvp-section {
+        padding: 5.5rem 1.4rem;
+    }
+
+    .countdown-item {
+        padding: 1.5rem 0.5rem;
+    }
+
+    .countdown-item span {
+        font-size: 3rem;
+    }
+
+    .event-date {
+        margin: 2.5rem 0;
+    }
+
+    .event-date span {
+        font-size: 5rem;
+    }
+
+    .event-date p {
+        font-size: 0.8rem;
+    }
+
+    .detail-item {
+        gap: 0.8rem;
+    }
+
+    .detail-item p {
+        font-size: 0.85rem;
+    }
+
+    .bible-verse {
+        padding: 2.5rem 1rem;
+    }
+
+    .bible-verse p {
+        font-size: 1.5rem;
+    }
+
+    .contact-card {
+        padding: 2.5rem 1.2rem;
+    }
+
+    .whatsapp-button {
+        font-size: 0.58rem;
+
+        letter-spacing: 1px;
+    }
+
+    .directions-button {
+        width: 100%;
+    }
+
+    .scroll-indicator {
+        bottom: 22px;
+
+        font-size: 0.48rem;
+    }
+
+    /* Mobile photo gallery */
+
+    .photo-gallery {
+        grid-template-columns: 1fr;
+
+        gap: 1rem;
+    }
+
+    .photo-gallery img {
+        height: 350px;
+    }
+
+    .gift-option {
+        width: 100%;
+
+        min-width: 0;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+
+    .hero-intro {
+        font-size: 0.6rem;
+
+        letter-spacing: 3px;
+    }
+
+    .countdown-grid {
+        gap: 0.5rem;
+    }
+
+    .countdown-item span {
+        font-size: 2.5rem;
+    }
+
+    .day-one h2,
+    .day-two h2 {
+        font-size: 3rem;
+    }
+
+    .event-date span {
+        font-size: 4rem;
+    }
+}
