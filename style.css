@@ -1,17 +1,11 @@
-/* =========================================================
-   THEMBA & KEITUMETSI WEDDING WEBSITE
-   MAIN STYLESHEET
-   ========================================================= */
+/* THEMBA & KEITUMETSI WEDDING WEBSITE */
 
 :root {
     --gold: #b08d57;
     --dark-gold: #8d6d3d;
-
     --black: #090909;
     --soft-black: #171717;
-
     --white: #ffffff;
-
     --cream: #f5efe4;
     --light-cream: #faf6ee;
     --beige: #d8c7ae;
@@ -19,11 +13,6 @@
     --text: #24201c;
     --muted: #625c55;
 }
-
-
-/* -----------------------------
-   RESET
------------------------------ */
 
 * {
     margin: 0;
@@ -57,10 +46,7 @@ a {
     color: inherit;
 }
 
-
-/* =========================================================
-   GENERAL TYPOGRAPHY
-   ========================================================= */
+/* GENERAL TYPOGRAPHY */
 
 .section-label {
     font-size: 0.7rem;
@@ -84,10 +70,7 @@ a {
     width: 90px;
 }
 
-
-/* =========================================================
-   HERO / FIRST SLIDE
-   ========================================================= */
+/* HERO */
 
 .hero {
     min-height: 100svh;
@@ -98,24 +81,18 @@ a {
     padding: 2rem;
     text-align: center;
     color: var(--white);
-
-    background:
-        url("couple-hero.jpeg")
-        center center / cover
-        no-repeat;
+    background: url("couple-hero.jpeg") center center / cover no-repeat;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(0, 0, 0, 0.75) 0%,
-            rgba(0, 0, 0, 0.30) 45%,
-            rgba(0, 0, 0, 0.85) 100%
-        );
+    background: linear-gradient(
+        180deg,
+        rgba(0, 0, 0, 0.75) 0%,
+        rgba(0, 0, 0, 0.30) 45%,
+        rgba(0, 0, 0, 0.85) 100%
+    );
 }
 
 .hero-frame {
@@ -169,15 +146,11 @@ a {
     align-items: center;
     justify-content: center;
     gap: 0.7rem;
-
     text-decoration: none;
     text-transform: uppercase;
-
     font-size: 0.68rem;
     letter-spacing: 1.8px;
-
     padding: 1rem 1.8rem;
-
     transition:
         transform 0.3s ease,
         background 0.3s ease,
@@ -198,18 +171,13 @@ a {
 .scroll-indicator {
     position: absolute;
     z-index: 2;
-
     bottom: 30px;
     left: 50%;
-
     transform: translateX(-50%);
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
     gap: 0.6rem;
-
     font-size: 0.55rem;
     letter-spacing: 2px;
 }
@@ -219,10 +187,7 @@ a {
     animation: bounce 2s infinite;
 }
 
-
-/* =========================================================
-   COUNTDOWN / SECOND SLIDE
-   ========================================================= */
+/* COUNTDOWN */
 
 .countdown-section {
     padding: 7rem 2rem;
@@ -238,7 +203,6 @@ a {
 .countdown-grid {
     max-width: 900px;
     margin: 3.5rem auto 1.5rem;
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
@@ -252,17 +216,14 @@ a {
 
 .countdown-item span {
     display: block;
-
     font-family: "Cormorant Garamond", serif;
     font-size: clamp(3rem, 6vw, 5rem);
-
     line-height: 1;
     color: var(--gold);
 }
 
 .countdown-item p {
     margin-top: 0.8rem;
-
     text-transform: uppercase;
     letter-spacing: 2px;
     font-size: 0.65rem;
@@ -274,25 +235,16 @@ a {
     color: #777;
 }
 
-
-/* =========================================================
-   THIRD SLIDE — OUR CELEBRATION
-   EDITORIAL PHOTO COLLAGE
-   ========================================================= */
+/* INTRODUCTION AND PHOTO COLLAGE */
 
 .introduction {
     padding: 7rem 2rem;
-
     max-width: 1250px;
     min-height: 760px;
-
     margin: 0 auto;
-
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
-
     align-items: center;
-
     gap: 4rem;
 }
 
@@ -314,172 +266,115 @@ a {
     color: var(--muted);
 }
 
-
-/* -----------------------------
-   COLLAGE CONTAINER
------------------------------ */
-
 .couple-gallery {
     position: relative;
-
     width: 100%;
     max-width: 620px;
     height: 620px;
-
     margin: 0 auto;
-
     isolation: isolate;
 }
 
-
-/* -----------------------------
-   MAIN PHOTO
------------------------------ */
+/* MAIN PHOTO */
 
 .gallery-main {
     position: absolute;
-
     width: 57%;
     height: 76%;
-
     top: 11%;
     left: 20%;
-
     z-index: 3;
-
     padding: 10px;
-
     background: var(--white);
-
-    box-shadow:
-        0 25px 55px rgba(60, 45, 30, 0.18);
-
+    box-shadow: 0 25px 55px rgba(60, 45, 30, 0.18);
     transform: rotate(-1.5deg);
-
-    transition:
-        transform 0.5s ease,
-        box-shadow 0.5s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .gallery-main img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
-
-    filter:
-        contrast(1.02)
-        saturate(0.9);
+    filter: contrast(1.02) saturate(0.9);
 }
-
-
-/* Gold border behind the main photograph */
 
 .gallery-main .portrait-border {
     position: absolute;
-
     inset: -12px;
-
     border: 1px solid var(--gold);
-
     transform: rotate(3deg);
-
     z-index: -1;
-
     pointer-events: none;
 }
 
-
-/* -----------------------------
-   SMALL COLLAGE PHOTOS
------------------------------ */
+/* SMALL COLLAGE PHOTOS */
 
 .gallery-photo {
     position: absolute;
-
     width: 40%;
     height: 39%;
-
     padding: 8px;
-
     background: var(--white);
-
-    box-shadow:
-        0 18px 40px rgba(60, 45, 30, 0.16);
-
+    box-shadow: 0 18px 40px rgba(60, 45, 30, 0.16);
     overflow: visible;
-
-    transition:
-        transform 0.5s ease,
-        box-shadow 0.5s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .gallery-photo img {
     width: 100%;
     height: 100%;
-
     display: block;
-
     object-fit: cover;
-
-    filter:
-        contrast(1.01)
-        saturate(0.88);
+    filter: contrast(1.01) saturate(0.88);
 }
 
 .gallery-photo .photo-frame {
     position: absolute;
-
     inset: -8px;
-
     border: 1px solid rgba(176, 141, 87, 0.65);
-
     pointer-events: none;
 }
-
-
-/* Upper-right photograph */
 
 .gallery-photo-two {
     top: 4%;
     right: 0;
-
     z-index: 4;
-
     transform: rotate(5deg);
 }
-
-
-/* Lower-left photograph */
 
 .gallery-photo-three {
     bottom: 4%;
     left: 0;
-
     z-index: 4;
-
     transform: rotate(-5deg);
 }
 
+/* FOURTH PHOTO */
 
-/* -----------------------------
-   COLLAGE DECORATION
------------------------------ */
+.gallery-photo-four {
+    width: 31%;
+    height: 28%;
+    right: 1%;
+    bottom: 8%;
+    z-index: 5;
+    transform: rotate(4deg);
+}
+
+.gallery-photo-four:hover {
+    transform: rotate(1deg) translateY(-6px);
+    box-shadow: 0 25px 50px rgba(60, 45, 30, 0.22);
+}
+
+/* COLLAGE DECORATION */
 
 .gallery-dot {
     position: absolute;
-
     width: 9px;
     height: 9px;
-
     border-radius: 50%;
-
     background: var(--gold);
-
     opacity: 0.8;
-
     z-index: 6;
 }
 
@@ -495,24 +390,17 @@ a {
 
 .gallery-caption {
     position: absolute;
-
     right: -4%;
     bottom: -1%;
-
     z-index: 7;
-
     display: flex;
     align-items: center;
     gap: 10px;
-
     transform: rotate(-90deg);
     transform-origin: right bottom;
-
     color: var(--gold);
-
     font-size: 0.52rem;
     letter-spacing: 2.5px;
-
     white-space: nowrap;
 }
 
@@ -523,133 +411,73 @@ a {
     background: var(--gold);
 }
 
-
-/* -----------------------------
-   COLLAGE HOVER
------------------------------ */
-
 .gallery-main:hover {
-    transform:
-        rotate(0deg)
-        translateY(-5px);
-
-    box-shadow:
-        0 30px 65px rgba(60, 45, 30, 0.23);
+    transform: rotate(0deg) translateY(-5px);
+    box-shadow: 0 30px 65px rgba(60, 45, 30, 0.23);
 }
 
 .gallery-photo-two:hover {
-    transform:
-        rotate(2deg)
-        translateY(-6px);
-
-    box-shadow:
-        0 25px 50px rgba(60, 45, 30, 0.22);
+    transform: rotate(2deg) translateY(-6px);
+    box-shadow: 0 25px 50px rgba(60, 45, 30, 0.22);
 }
 
 .gallery-photo-three:hover {
-    transform:
-        rotate(-2deg)
-        translateY(-6px);
-
-    box-shadow:
-        0 25px 50px rgba(60, 45, 30, 0.22);
+    transform: rotate(-2deg) translateY(-6px);
+    box-shadow: 0 25px 50px rgba(60, 45, 30, 0.22);
 }
 
-
-/* =========================================================
-   CELEBRATION SECTIONS
-   ========================================================= */
+/* CELEBRATION SECTIONS */
 
 .celebration {
     min-height: 100svh;
-
     position: relative;
     overflow: hidden;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     padding: 7rem 2rem;
-
     text-align: center;
 }
 
 .celebration-content {
     position: relative;
     z-index: 2;
-
     width: 100%;
     max-width: 850px;
 }
 
 .day-number {
     position: absolute;
-
     top: -5rem;
     left: 50%;
-
     transform: translateX(-50%);
-
     font-family: "Cormorant Garamond", serif;
     font-size: clamp(7rem, 18vw, 13rem);
-
     opacity: 0.06;
     pointer-events: none;
 }
 
-
-/* =========================================================
-   DAY ONE
-   ========================================================= */
+/* DAY ONE */
 
 .day-one {
     color: var(--white);
-
     background:
         radial-gradient(
-            circle at center,
-            #202020 0%,
-            #0a0a0a 65%
-        );
-}
-
-.traditional-pattern {
-    position: absolute;
-
-    width: 170px;
-    height: 100%;
-
-    opacity: 0.14;
-
-    background-image:
-        repeating-linear-gradient(
-            45deg,
-            transparent 0,
-            transparent 18px,
-            var(--gold) 19px,
-            transparent 21px
-        );
-}
-
-.pattern-left {
-    left: 0;
-}
-
-.pattern-right {
-    right: 0;
-    transform: scaleX(-1);
+            circle at top left,
+            rgba(176, 141, 87, 0.18),
+            transparent 35%
+        ),
+        linear-gradient(135deg, #090909, #1b1b1b);
 }
 
 .day-one .section-label {
-    color: #d8d8d8;
+    color: #d6c5a8;
 }
 
 .day-one h2,
 .day-two h2 {
-    font-size: clamp(3.5rem, 8vw, 7rem);
-    line-height: 0.85;
-    letter-spacing: 2px;
+    font-size: clamp(3.5rem, 8vw, 6rem);
+    line-height: 0.9;
 }
 
 .day-one .detail-item {
@@ -677,62 +505,21 @@ a {
     transform: translateY(-3px);
 }
 
-
-/* =========================================================
-   DAY TWO
-   ========================================================= */
+/* DAY TWO */
 
 .day-two {
     color: #3f3328;
-
     background:
         radial-gradient(
-            circle at top,
-            #fffaf0 0%,
-            var(--cream) 48%,
-            var(--beige) 100%
-        );
-}
-
-.swati-decoration {
-    position: absolute;
-
-    left: 0;
-
-    width: 100%;
-    height: 70px;
-
-    opacity: 0.45;
-
-    background:
-        repeating-linear-gradient(
-            45deg,
-            transparent 0 16px,
-            var(--gold) 17px 19px,
-            transparent 20px 36px
+            circle at bottom right,
+            rgba(176, 141, 87, 0.20),
+            transparent 35%
         ),
-        repeating-linear-gradient(
-            -45deg,
-            transparent 0 16px,
-            rgba(92, 72, 56, 0.25) 17px 19px,
-            transparent 20px 36px
-        );
-}
-
-.swati-top {
-    top: 0;
-}
-
-.swati-bottom {
-    bottom: 0;
-}
-
-.day-two .section-label {
-    color: #6e5a45;
+        linear-gradient(135deg, #f8f1e5, #e8dac5);
 }
 
 .day-two .detail-item {
-    border-color: rgba(99, 79, 57, 0.18);
+    border-color: rgba(92, 72, 56, 0.18);
 }
 
 .day-two .detail-item i,
@@ -756,20 +543,14 @@ a {
     transform: translateY(-3px);
 }
 
-
-/* =========================================================
-   EVENT DATES
-   ========================================================= */
+/* EVENT DATES */
 
 .event-date {
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     gap: 1rem;
     margin: 3rem 0;
-
     font-family: "Cormorant Garamond", serif;
 }
 
@@ -781,16 +562,12 @@ a {
 
 .event-date p {
     text-align: left;
-
     font-size: 1rem;
     letter-spacing: 2px;
     line-height: 1.4;
 }
 
-
-/* =========================================================
-   EVENT DETAILS
-   ========================================================= */
+/* EVENT DETAILS */
 
 .event-details {
     max-width: 650px;
@@ -799,15 +576,10 @@ a {
 
 .detail-item {
     display: flex;
-
     align-items: flex-start;
-
     gap: 1.2rem;
-
     padding: 1.5rem 0;
-
     text-align: left;
-
     border-bottom: 1px solid;
 }
 
@@ -823,9 +595,7 @@ a {
 
 .detail-label {
     display: block;
-
     margin-bottom: 0.4rem;
-
     font-size: 0.65rem;
     letter-spacing: 3px;
 }
@@ -834,61 +604,42 @@ a {
     font-size: 0.95rem;
 }
 
-
-/* =========================================================
-   BIBLE VERSES
-   ========================================================= */
+/* BIBLE VERSES */
 
 .bible-verse {
     max-width: 700px;
-
     margin: 5rem auto 0;
-
     padding: 3rem 2rem;
-
     border-top: 1px solid;
     border-bottom: 1px solid;
 }
 
 .quote-icon {
     color: var(--gold);
-
     font-size: 1.4rem;
-
     margin-bottom: 1.5rem;
 }
 
 .bible-verse p {
     font-family: "Cormorant Garamond", serif;
-
     font-size: clamp(1.5rem, 3vw, 2.2rem);
-
     font-style: italic;
-
     line-height: 1.45;
 }
 
 .bible-verse span {
     display: block;
-
     margin-top: 1.5rem;
-
     color: var(--gold);
-
     font-size: 0.7rem;
     letter-spacing: 3px;
 }
 
-
-/* =========================================================
-   GIFTS
-   ========================================================= */
+/* GIFTS */
 
 .gifts-section {
     padding: 7rem 2rem;
-
     text-align: center;
-
     background: var(--white);
 }
 
@@ -903,39 +654,27 @@ a {
 
 .gifts-message {
     max-width: 600px;
-
     margin: 1.2rem auto;
-
     color: #5a5a5a;
 }
 
 .gift-options {
     display: flex;
-
     justify-content: center;
-
     gap: 1.5rem;
-
     flex-wrap: wrap;
-
     margin-top: 3rem;
 }
 
 .gift-option {
     min-width: 220px;
-
     padding: 2rem;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-
     gap: 1rem;
-
     border: 1px solid rgba(176, 141, 87, 0.45);
-
     background: var(--light-cream);
-
     transition: transform 0.3s ease;
 }
 
@@ -953,23 +692,12 @@ a {
     font-size: 1.6rem;
 }
 
-
-/* =========================================================
-   RSVP
-   ========================================================= */
+/* RSVP */
 
 .rsvp-section {
     padding: 7rem 2rem;
-
-    background:
-        linear-gradient(
-            135deg,
-            #090909,
-            #1d1d1d
-        );
-
+    background: linear-gradient(135deg, #090909, #1d1d1d);
     color: var(--white);
-
     text-align: center;
 }
 
@@ -989,111 +717,76 @@ a {
 
 .rsvp-intro {
     max-width: 600px;
-
     margin: 0 auto 3rem;
-
     color: #d0d0d0;
 }
 
 .rsvp-contacts {
     display: grid;
-
     grid-template-columns: repeat(2, 1fr);
-
     gap: 1.5rem;
 }
 
 .contact-card {
     padding: 3rem 2rem;
-
     border: 1px solid rgba(176, 141, 87, 0.4);
-
     background: rgba(255, 255, 255, 0.02);
 }
 
 .whatsapp-large-icon {
     font-size: 2rem;
-
     color: var(--gold);
-
     margin-bottom: 1.2rem;
 }
 
 .contact-card h3 {
     font-size: 2rem;
-
     margin-bottom: 0.5rem;
 }
 
 .contact-card p {
     color: #cfcfcf;
-
     margin-bottom: 2rem;
 }
 
 .whatsapp-button {
     width: 100%;
-
     color: var(--white);
-
     border: 1px solid var(--gold);
 }
 
 .whatsapp-button:hover {
     background: var(--gold);
-
     color: var(--black);
-
     transform: translateY(-3px);
 }
 
-
-/* =========================================================
-   CLOSING / LAST SLIDE
-   ========================================================= */
+/* CLOSING */
 
 .closing-section {
     min-height: 100svh;
-
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     padding: 2rem;
-
     text-align: center;
-
-    background:
-        linear-gradient(
-            135deg,
-            #f8f1e5,
-            #d8c7ae
-        );
+    background: linear-gradient(135deg, #f8f1e5, #d8c7ae);
 }
 
 .closing-section h2 {
     font-size: clamp(4rem, 11vw, 9rem);
-
     line-height: 0.9;
-
     margin: 2rem 0;
 }
 
 .closing-section h2 span {
     display: block;
-
     margin: 0.3rem 0;
-
     font-size: 0.55em;
-
     color: var(--gold);
 }
 
-
-/* =========================================================
-   ANIMATIONS
-   ========================================================= */
+/* ANIMATIONS */
 
 @keyframes fadeUp {
     from {
@@ -1118,13 +811,9 @@ a {
     }
 }
 
-
-/* =========================================================
-   TABLET
-   ========================================================= */
+/* TABLET */
 
 @media (max-width: 850px) {
-
     .introduction {
         grid-template-columns: 1fr;
         gap: 3rem;
@@ -1159,13 +848,9 @@ a {
     }
 }
 
-
-/* =========================================================
-   MOBILE
-   ========================================================= */
+/* MOBILE */
 
 @media (max-width: 600px) {
-
     .hero {
         background-position: center center;
     }
@@ -1251,10 +936,7 @@ a {
         font-size: 0.48rem;
     }
 
-
-    /* -----------------------------
-       MOBILE PHOTO COLLAGE
-    ----------------------------- */
+    /* MOBILE PHOTO COLLAGE */
 
     .couple-gallery {
         height: 520px;
@@ -1265,32 +947,35 @@ a {
     .gallery-main {
         width: 59%;
         height: 70%;
-
         top: 12%;
         left: 20%;
-
         padding: 7px;
     }
 
     .gallery-photo {
         width: 40%;
         height: 35%;
-
         padding: 6px;
     }
 
     .gallery-photo-two {
         top: 3%;
         right: 0;
-
         transform: rotate(4deg);
     }
 
     .gallery-photo-three {
         bottom: 3%;
         left: 0;
-
         transform: rotate(-4deg);
+    }
+
+    .gallery-photo-four {
+        width: 30%;
+        height: 25%;
+        right: 0;
+        bottom: 8%;
+        transform: rotate(3deg);
     }
 
     .gallery-main .portrait-border {
@@ -1304,7 +989,6 @@ a {
     .gallery-caption {
         right: -5%;
         bottom: 0;
-
         font-size: 0.43rem;
         letter-spacing: 2px;
     }
@@ -1320,13 +1004,9 @@ a {
     }
 }
 
-
-/* =========================================================
-   VERY SMALL PHONES
-   ========================================================= */
+/* VERY SMALL PHONES */
 
 @media (max-width: 400px) {
-
     .hero h1 {
         font-size: 3.5rem;
     }
@@ -1366,6 +1046,13 @@ a {
     .gallery-photo {
         width: 41%;
         height: 34%;
+    }
+
+    .gallery-photo-four {
+        width: 29%;
+        height: 23%;
+        right: 0;
+        bottom: 8%;
     }
 
     .gallery-caption {
