@@ -1,52 +1,60 @@
-document.addEventListener("DOMContentLoaded", () => {
 
- /* =========================================================
-   WEDDING COUNTDOWN
-   Target: 28 November 2026, 12:00 South African time (UTC+2)
-   ========================================================= */
+document.addEventListener("DOMContentLoaded", function () {
 
-document.addEventListener("DOMContentLoaded", () => {
-    const targetDate = new Date("2026-11-28T12:00:00+02:00").getTime();
+    // Wedding date and time: 28 November 2026 at 12:00
+    // South African time is UTC+2.
+    const weddingDate = new Date(
+        "2026-11-28T12:00:00+02:00"
+    ).getTime();
 
-    const daysEl = document.getElementById("days");
-    const hoursEl = document.getElementById("hours");
-    const minutesEl = document.getElementById("minutes");
-    const secondsEl = document.getElementById("seconds");
+    const days = document.getElementById("days");
+    const hours = document.getElementById("hours");
+    const minutes = document.getElementById("minutes");
+    const seconds = document.getElementById("seconds");
+
+    // Stop safely if the countdown elements are missing.
+    if (!days || !hours || !minutes || !seconds) {
+        console.error("Wedding countdown elements could not be found.");
+        return;
+    }
 
     function updateCountdown() {
-        const distance = targetDate - Date.now();
+        const difference = weddingDate - Date.now();
 
-        if (distance <= 0) {
-            daysEl.textContent = "00";
-            hoursEl.textContent = "00";
-            minutesEl.textContent = "00";
-            secondsEl.textContent = "00";
+        if (difference <= 0) {
+            days.textContent = "00";
+            hours.textContent = "00";
+            minutes.textContent = "00";
+            seconds.textContent = "00";
             return;
         }
 
-        daysEl.textContent = String(
-            Math.floor(distance / (1000 * 60 * 60 * 24))
-        ).padStart(2, "0");
+        const remainingDays = Math.floor(
+            difference / (1000 * 60 * 60 * 24)
+        );
 
-        hoursEl.textContent = String(
-            Math.floor(
-                (distance % (1000 * 60 * 60 * 24)) /
-                (1000 * 60 * 60)
-            )
-        ).padStart(2, "0");
+        const remainingHours = Math.floor(
+            (difference % (1000 * 60 * 60 * 24)) /
+            (1000 * 60 * 60)
+        );
 
-        minutesEl.textContent = String(
-            Math.floor(
-                (distance % (1000 * 60 * 60)) /
-                (1000 * 60)
-            )
-        ).padStart(2, "0");
+        const remainingMinutes = Math.floor(
+            (difference % (1000 * 60 * 60)) /
+            (1000 * 60)
+        );
 
-        secondsEl.textContent = String(
-            Math.floor((distance % (1000 * 60)) / 1000)
-        ).padStart(2, "0");
+        const remainingSeconds = Math.floor(
+            (difference % (1000 * 60)) / 1000
+        );
+
+        days.textContent = String(remainingDays).padStart(2, "0");
+        hours.textContent = String(remainingHours).padStart(2, "0");
+        minutes.textContent = String(remainingMinutes).padStart(2, "0");
+        seconds.textContent = String(remainingSeconds).padStart(2, "0");
     }
 
+    // Show the countdown immediately, then refresh every second.
     updateCountdown();
     setInterval(updateCountdown, 1000);
+
 });
